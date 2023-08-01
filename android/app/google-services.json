@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "713743208671",
+    "project_id": "food-delivery-app-816bd",
+    "storage_bucket": "food-delivery-app-816bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713743208671:android:a11f0f8ef1e353abdd996a",
+        "android_client_info": {
+          "package_name": "com.example.foood_delivery_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713743208671-jlbgfggn1kvlujaitq6be7a8o20q7d9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxxLgZKiJEOB-rbwi1MGz2vJi3Ul-8oHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713743208671-jlbgfggn1kvlujaitq6be7a8o20q7d9p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "713743208671-vtn82k962noia0poi5k9i9f3c0boa0ml.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fooodDeliveryApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
