@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: AppColors.lightBackgroundColor,
         body: Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 10.0,
             right: 10.0,
             top: 20.0,
@@ -35,34 +35,36 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: AppColors.colorWhite,
                       borderRadius: BorderRadius.circular(Dimens.radius15),
                     ),
+                    child: Icon(
+                      Icons.menu_rounded,
+                      color: AppColors.colorShade01,
+                    ),
                   ),
                   const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Center(
-                        child: Row(
-                          children: [
-                            Text(
-                              'Delivery to',
-                              style: TextStyle(
-                                color: AppColors.colorShade01,
-                                fontSize: 14.0,
-                                decoration: TextDecoration.underline,
-                                decorationColor: AppColors.colorShade01,
-                                decorationThickness: 2.0,
-                              ),
+                      Row(
+                        children: [
+                          Text(
+                            'Delivery to',
+                            style: TextStyle(
+                              color: AppColors.colorShade01,
+                              fontSize: 14.0,
+                              decoration: TextDecoration.underline,
+                              decorationColor: AppColors.colorShade01,
+                              decorationThickness: 2.0,
                             ),
-                            Icon(Icons.arrow_drop_down_sharp),
-                          ],
-                        ),
-                      ),
-                      Center(
-                        child: Text(
-                          '*address*',
-                          style: TextStyle(
-                            color: AppColors.colorPrimaryGradient,
-                            fontSize: 15.0,
                           ),
+                          Icon(
+                            Icons.arrow_drop_down_sharp,
+                          ),
+                        ],
+                      ),
+                      Text(
+                        '*address*',
+                        style: TextStyle(
+                          color: AppColors.colorPrimaryGradient,
+                          fontSize: 15.0,
                         ),
                       ),
                     ],
@@ -73,6 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       color: AppColors.colorWhite,
                       borderRadius: BorderRadius.circular(Dimens.radius15),
+                    ),
+                    child: Icon(
+                      Icons.person,
+                      color: AppColors.colorShade01,
                     ),
                   ),
                 ],
@@ -115,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -136,14 +142,68 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               Container(
-                width: Dimens.width200,
-                height: Dimens.height260,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimens.radius15),
-                  color: AppColors.colorWhite,
+                height: 190.0,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Container(
+                        width: 100,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          color: AppColors.colorWhite,
+                          borderRadius: BorderRadius.circular(Dimens.radius15),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Container(
+                        width: 100,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          color: AppColors.colorWhite,
+                          borderRadius: BorderRadius.circular(Dimens.radius15),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Container(
+                        width: 100,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          color: AppColors.colorWhite,
+                          borderRadius: BorderRadius.circular(Dimens.radius15),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Container(
+                        width: 100,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          color: AppColors.colorWhite,
+                          borderRadius: BorderRadius.circular(Dimens.radius15),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.0),
+                      child: Container(
+                        width: 100,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          color: AppColors.colorWhite,
+                          borderRadius: BorderRadius.circular(Dimens.radius15),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              SimpleButton(text: 'add to cart'),
+              )
             ],
           ),
         ),

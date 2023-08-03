@@ -1,10 +1,12 @@
-class DishModel {
+import 'package:core/core.dart';
+
+class DishModel extends Equatable {
   final int id;
   final String name;
   final String imageURL;
   final double cost;
-  final String? description;
-  final List<String>? ingredients;
+  final String description;
+  final List<String> ingredients;
   final String section;
 
   DishModel({
@@ -12,16 +14,19 @@ class DishModel {
     required this.name,
     required this.imageURL,
     required this.cost,
-    this.description,
-    this.ingredients,
+    required this.description,
+    required this.ingredients,
     required this.section,
   });
 
-  // toJson() {
-  //   return {
-  //     "Name": name,
-  //     "Image": imageURL,
-  //     "Cost": cost,
-  //     "Description" description,
-  //   }
+  @override
+  List<Object> get props => <Object>[
+        id,
+        name,
+        imageURL,
+        cost,
+        description,
+        ingredients,
+        section,
+      ];
 }

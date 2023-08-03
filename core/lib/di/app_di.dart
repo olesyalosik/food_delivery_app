@@ -10,4 +10,5 @@ class AppDI {
   }
 }
 
-//ui -> bloc -> usecases -> repositories -> provider -> api
+//homescreen ->(event)-> home_bloc -> getalldishesusecase -> dish_repository -> firebase_provider -> firebase
+//<-         state

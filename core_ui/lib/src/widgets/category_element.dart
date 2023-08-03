@@ -20,19 +20,15 @@ class CategoryElement extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         children: [
           Container(
-            width: Dimens.bigCategoryWidth,
-            height: Dimens.bigCategoryHeight,
-            decoration: BoxDecoration(
-              color: AppColors.colorPrimaryGradient,
-              borderRadius: BorderRadius.circular(Dimens.radius50),
-            ),
-          ),
-          Container(
             width: Dimens.categoryWidth,
             height: Dimens.categoryHeight,
             decoration: BoxDecoration(
               color: AppColors.lightBackgroundColor,
               borderRadius: BorderRadius.circular(Dimens.radius50),
+              border: Border.all(
+                color: AppColors.colorPrimaryGradient,
+                width: 2.0,
+              ),
             ),
           ),
           Container(

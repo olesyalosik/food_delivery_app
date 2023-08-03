@@ -1,3 +1,5 @@
 library domain;
 
-export 'package:domain/models/dish_model.dart';
+export 'models/models.dart';
+export 'repositories/repositories.dart';
+export 'usecases/export_usecases.dart';
