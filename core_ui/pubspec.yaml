@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   domain:
     path: ../domain
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
@@ -20,4 +21,18 @@ dev_dependencies:
 
 
 flutter:
+  fonts:
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/Comfortaa-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Comfortaa-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Comfortaa-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Comfortaa-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Comfortaa-SemiBold.ttf
+          weight: 600
+
 

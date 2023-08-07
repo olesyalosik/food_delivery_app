@@ -5,9 +5,16 @@ import 'package:domain/domain.dart';
 
 class DataDI {
   void initDependencies() {
+    initFirebase();
     initProviders();
     initRepositories();
     initUseCases();
+  }
+
+  void initFirebase() {
+    appLocator.registerSingleton<FirebaseFirestore>(
+      FirebaseFirestore.instance,
+    );
   }
 
   void initRepositories() {
@@ -18,11 +25,19 @@ class DataDI {
     );
   }
 
-  void initUseCases() {}
+  void initUseCases() {
+    appLocator.registerFactory<GetAllDishesUseCase>(
+      () => GetAllDishesUseCase(
+        dishRepository: appLocator<DishRepository>(),
+      ),
+    );
+  }
 
   void initProviders() {
     appLocator.registerSingleton<FirebaseProvider>(
-      FirebaseProvider(),
+      FirebaseProvider(
+        firebaseFirestore: appLocator<FirebaseFirestore>(),
+      ),
     );
   }
 }

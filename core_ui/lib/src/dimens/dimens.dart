@@ -10,7 +10,9 @@ class Dimens {
   static const double smallCategoryWidth = 65.0;
   static const double bigCategoryWidth = 83.0;
   static const double iconWidth = 10.0;
+  static const double cardWidth = 170.0;
 
+  static const double cardHeight = 110.0;
   static const double height20 = 20.0;
   static const double height40 = 40.0;
   static const double height80 = 80.0;
@@ -19,4 +21,8 @@ class Dimens {
   static const double smallCategoryHeight = 87.0;
   static const double bigCategoryHeight = 113.0;
   static const double iconHeight = 10.0;
+
+  static const double padding5 = 5.0;
+  static const double padding10 = 10.0;
+  static const double padding20 = 20.0;
 }

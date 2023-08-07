@@ -98,23 +98,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const <Widget>[
-                    CategoryElement(
+                    SectionElement(
                       name: 'Burger',
                       emoji: '🍔',
                     ),
-                    CategoryElement(
+                    SectionElement(
                       name: 'Pizza',
                       emoji: '🍕',
                     ),
-                    CategoryElement(
+                    SectionElement(
                       name: 'Sausage',
                       emoji: '🌭',
                     ),
-                    CategoryElement(
+                    SectionElement(
                       name: 'Dessert',
                       emoji: '🍰',
                     ),
-                    CategoryElement(
+                    SectionElement(
                       name: 'Sushi',
                       emoji: '🍣',
                     ),

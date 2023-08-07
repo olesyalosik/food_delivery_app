@@ -9,6 +9,8 @@ class DishMapper {
       imageURL: dishModel.imageURL,
       cost: dishModel.cost,
       section: dishModel.section,
+      ingredients: dishModel.ingredients,
+      description: dishModel.description,
     );
   }
 
@@ -19,6 +21,8 @@ class DishMapper {
       imageURL: dishEntity.imageURL,
       cost: dishEntity.cost,
       section: dishEntity.section,
+      ingredients: dishEntity.ingredients,
+      description: dishEntity.description,
     );
   }
 }

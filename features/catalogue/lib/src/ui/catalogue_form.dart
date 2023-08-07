@@ -1,3 +1,5 @@
+import 'package:core/core.dart';
+import 'package:catalogue/src/bloc/catalogue_bloc.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -9,67 +11,54 @@ class CatalogueForm extends StatefulWidget {
 }
 
 class _CatalogueFormState extends State<CatalogueForm> {
-  List _dishes = [
-    {},
-  ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppColors.lightBackgroundColor,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Icon(Icons.arrow_back_ios_rounded,
-                      color: AppColors.colorShade01),
-                  const Text(
-                    'All dishes',
-                    style: TextStyle(
-                      color: AppColors.colorShade01,
-                      fontSize: 24.0,
-                    ),
-                  ),
-                  Container(
-                    height: Dimens.height40,
-                    width: Dimens.width40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Dimens.radius15),
-                      color: AppColors.colorWhite,
-                    ),
-                    child: Icon(Icons.person),
-                  ),
-                ],
+    return BlocBuilder<CatalogueBloc, CatalogueState>(
+        builder: (BuildContext context, CatalogueState state) {
+      return SafeArea(
+        child: Scaffold(
+          backgroundColor: AppColors.lightBackgroundColor,
+          appBar: AppBar(
+            backgroundColor: AppColors.lightBackgroundColor,
+            title: Center(
+              child: Text(
+                "All dishes",
+                style: TextStyle(
+                  color: AppColors.colorShade01,
+                  fontSize: 24.0,
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 180.0,
-                    height: Dimens.height260,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Dimens.radius15),
-                      color: AppColors.colorWhite,
-                    ),
-                  ),
-                  Container(
-                    width: 180.0,
-                    height: Dimens.height260,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Dimens.radius15),
-                      color: AppColors.colorWhite,
-                    ),
-                  ),
-                ],
-              ),
+            ),
+            leading: Icon(Icons.arrow_back_ios_rounded,
+                color: AppColors.colorShade01),
+            actions: [
+              Padding(
+                  padding: EdgeInsetsDirectional.symmetric(
+                      horizontal: Dimens.padding10),
+                  child: Icon(Icons.person)),
             ],
           ),
+          body: state.isLoading
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: Dimens.padding10,
+                    vertical: Dimens.padding20,
+                  ),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    children: List<Widget>.generate(
+                      state.dishes.length,
+                      (index) => DishElement(
+                        dishModel: state.dishes[index],
+                      ),
+                    ),
+                  ),
+                ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

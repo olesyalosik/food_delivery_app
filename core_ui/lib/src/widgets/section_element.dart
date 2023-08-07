@@ -3,10 +3,10 @@ import 'dart:ui';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 
-class CategoryElement extends StatelessWidget {
+class SectionElement extends StatelessWidget {
   final String name;
   final String emoji;
-  const CategoryElement({
+  const SectionElement({
     required this.name,
     required this.emoji,
     super.key,
@@ -15,7 +15,7 @@ class CategoryElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5.0),
+      padding: EdgeInsets.symmetric(horizontal: Dimens.padding5),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
@@ -32,7 +32,7 @@ class CategoryElement extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(Dimens.padding5),
             alignment: Alignment.bottomCenter,
             width: Dimens.smallCategoryWidth,
             height: Dimens.smallCategoryHeight,
