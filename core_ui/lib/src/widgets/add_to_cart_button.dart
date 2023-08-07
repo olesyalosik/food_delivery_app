@@ -12,16 +12,16 @@ class AddToCartButton extends StatelessWidget {
       child: Padding(
         padding: EdgeInsetsDirectional.symmetric(horizontal: Dimens.padding5),
         child: Container(
-          width: 25,
-          height: 25, // Customize the size as per your requirement
+          width: Dimens.iconSize,
+          height: Dimens.iconSize, // Customize the size as per your requirement
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: AppColors.colorPrimaryGradient,
           ),
           child: const Icon(
-            Icons.shopping_cart_rounded,
+            Icons.add_circle_outlined,
             color: Colors.white,
-            size: 20,
+            size: Dimens.iconSize,
           ),
         ),
       ),

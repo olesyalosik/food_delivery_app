@@ -23,19 +23,20 @@ class _CatalogueFormState extends State<CatalogueForm> {
             title: Center(
               child: Text(
                 "All dishes",
-                style: TextStyle(
-                  color: AppColors.colorShade01,
-                  fontSize: 24.0,
-                ),
+                style: TextStyles.comfortaa_bold_24,
               ),
             ),
             leading: Icon(Icons.arrow_back_ios_rounded,
                 color: AppColors.colorShade01),
             actions: [
               Padding(
-                  padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: Dimens.padding10),
-                  child: Icon(Icons.person)),
+                padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: Dimens.padding10),
+                child: Icon(
+                  Icons.person,
+                  size: Dimens.iconSize,
+                ),
+              ),
             ],
           ),
           body: state.isLoading
