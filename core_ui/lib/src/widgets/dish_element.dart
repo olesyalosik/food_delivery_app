@@ -13,48 +13,49 @@ class DishElement extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: Dimens.padding5,
-        vertical: Dimens.padding5,
+        horizontal: Dimens.padding10,
+        vertical: Dimens.padding10,
       ),
-      child: SizedBox(
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dimens.radius15),
-            color: AppColors.colorWhite,
-          ),
-          child: Column(
-            children: [
-              DishImage(
-                imageURL: dishModel.imageURL,
-                width: Dimens.cardWidth,
-                height: Dimens.cardHeight,
-                alignment: Alignment.center,
-              ),
-              Text(
-                dishModel.name,
-                style: TextStyles.comfortaa_light_16,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.symmetric(
-                        horizontal: Dimens.padding5),
-                    child: Icon(
-                      Icons.favorite,
-                      color: AppColors.colorPrimaryColor,
-                      size: Dimens.iconSize,
-                    ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(Dimens.radius15),
+          color: AppColors.colorWhite,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            DishImage(
+              imageURL: dishModel.imageURL,
+              width: Dimens.cardWidth,
+              height: Dimens.cardHeight,
+              alignment: Alignment.center,
+            ),
+            Text(
+              dishModel.name,
+              style: TextStyles.comfortaa_light_16
+                  .copyWith(color: AppColors.colorShade01),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.symmetric(
+                      horizontal: Dimens.padding5),
+                  child: Icon(
+                    Icons.favorite,
+                    color: AppColors.colorPrimaryColor,
+                    size: Dimens.iconSize,
                   ),
-                  Text(
-                    "${dishModel.cost}\$",
-                    style: TextStyles.comfortaa_light_16,
-                  ),
-                  AddToCartButton(),
-                ],
-              ),
-            ],
-          ),
+                ),
+                Text(
+                  "${dishModel.cost}\$",
+                  style: TextStyles.comfortaa_light_16
+                      .copyWith(color: AppColors.colorShade01),
+                ),
+                AddToCartButton(),
+              ],
+            ),
+          ],
         ),
       ),
     );
