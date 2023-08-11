@@ -48,4 +48,7 @@ flutter:
           weight: 400
         - asset: assets/fonts/Comfortaa-SemiBold.ttf
           weight: 600
+  assets:
+    - assets/pictures/
+
 

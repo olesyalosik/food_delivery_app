@@ -4,6 +4,7 @@ import 'package:domain/domain.dart';
 
 class DishElement extends StatelessWidget {
   final DishModel dishModel;
+
   const DishElement({
     required this.dishModel,
     super.key,
@@ -12,22 +13,22 @@ class DishElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: Dimens.padding10,
-        vertical: Dimens.padding10,
+      padding: const EdgeInsets.symmetric(
+        horizontal: Dimensions.padding10,
+        vertical: Dimensions.padding10,
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Dimens.radius15),
+          borderRadius: BorderRadius.circular(Dimensions.containerRadius),
           color: AppColors.colorWhite,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: <Widget>[
             DishImage(
               imageURL: dishModel.imageURL,
-              width: Dimens.cardWidth,
-              height: Dimens.cardHeight,
+              width: Dimensions.cardWidth,
+              height: Dimensions.cardHeight,
               alignment: Alignment.center,
             ),
             Text(
@@ -38,13 +39,13 @@ class DishElement extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: Dimens.padding5),
+                      horizontal: Dimensions.padding5),
                   child: Icon(
                     Icons.favorite,
                     color: AppColors.colorPrimaryColor,
-                    size: Dimens.iconSize,
+                    size: Dimensions.iconSize,
                   ),
                 ),
                 Text(
@@ -52,7 +53,7 @@ class DishElement extends StatelessWidget {
                   style: TextStyles.comfortaa_light_16
                       .copyWith(color: AppColors.colorShade01),
                 ),
-                AddToCartButton(),
+                const AddToCartButton(),
               ],
             ),
           ],

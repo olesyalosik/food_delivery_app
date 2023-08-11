@@ -12,9 +12,10 @@ class DishRepositoryImpl extends DishRepository {
 
   @override
   Future<List<DishModel>> getAllDishes() async {
-    List<DishEntity> dishEntities = await _firebaseProvider.getAllDishes();
+    final List<DishEntity> dishEntities =
+        await _firebaseProvider.getAllDishes();
 
-    List<DishModel> dishModels = dishEntities
+    final List<DishModel> dishModels = dishEntities
         .map((DishEntity dishEntity) => DishMapper.mapEntityToModel(dishEntity))
         .toList();
 

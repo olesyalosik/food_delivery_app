@@ -9,7 +9,7 @@ class DishModel extends Equatable {
   final List<String> ingredients;
   final String section;
 
-  DishModel({
+  const DishModel({
     required this.id,
     required this.name,
     required this.imageURL,

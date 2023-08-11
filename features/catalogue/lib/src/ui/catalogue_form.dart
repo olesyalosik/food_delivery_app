@@ -23,7 +23,8 @@ class _CatalogueFormState extends State<CatalogueForm> {
             title: Center(
               child: Text(
                 "All dishes",
-                style: TextStyles.comfortaa_bold_24,
+                style: TextStyles.comfortaa_bold_24
+                    .copyWith(color: AppColors.colorShade01),
               ),
             ),
             leading: Icon(Icons.arrow_back_ios_rounded,
@@ -31,10 +32,10 @@ class _CatalogueFormState extends State<CatalogueForm> {
             actions: [
               Padding(
                 padding: EdgeInsetsDirectional.symmetric(
-                    horizontal: Dimens.padding10),
+                    horizontal: Dimensions.padding10),
                 child: Icon(
                   Icons.person,
-                  size: Dimens.iconSize,
+                  size: Dimensions.iconSize,
                 ),
               ),
             ],
@@ -45,8 +46,8 @@ class _CatalogueFormState extends State<CatalogueForm> {
                 )
               : Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: Dimens.padding10,
-                    vertical: Dimens.padding20,
+                    horizontal: Dimensions.padding10,
+                    vertical: Dimensions.padding20,
                   ),
                   child: GridView.count(
                     crossAxisCount: 2,

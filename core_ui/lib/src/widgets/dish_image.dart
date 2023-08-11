@@ -18,7 +18,7 @@ class DishImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(Dimens.radius15),
+      borderRadius: BorderRadius.circular(Dimensions.containerRadius),
       child: CachedNetworkImage(
         width: width,
         height: height,

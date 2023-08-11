@@ -5,26 +5,26 @@ import 'package:flutter/material.dart';
 
 class SectionElement extends StatelessWidget {
   final String name;
-  final String emoji;
+  final String image;
   const SectionElement({
     required this.name,
-    required this.emoji,
+    required this.image,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Dimens.padding5),
+      padding: const EdgeInsets.symmetric(horizontal: Dimensions.padding5),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
           Container(
-            width: Dimens.categoryWidth,
-            height: Dimens.categoryHeight,
+            width: Dimensions.categoryWidth,
+            height: Dimensions.categoryHeight,
             decoration: BoxDecoration(
               color: AppColors.lightBackgroundColor,
-              borderRadius: BorderRadius.circular(Dimens.radius50),
+              borderRadius: BorderRadius.circular(Dimensions.categoryRadius),
               border: Border.all(
                 color: AppColors.colorPrimaryGradient,
                 width: 2.0,
@@ -32,33 +32,24 @@ class SectionElement extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(Dimens.padding5),
+            // padding: const EdgeInsets.all(Dimens.padding5),
             alignment: Alignment.bottomCenter,
-            width: Dimens.smallCategoryWidth,
-            height: Dimens.smallCategoryHeight,
+            width: Dimensions.smallCategoryWidth,
+            height: Dimensions.smallCategoryHeight,
             decoration: const BoxDecoration(
               color: AppColors.lightPrimaryGradient,
               borderRadius: BorderRadius.all(
-                Radius.circular(Dimens.radius50),
+                Radius.circular(Dimensions.categoryRadius),
               ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
-                  emoji,
-                  style: const TextStyle(
-                    color: AppColors.colorShade01,
-                    fontSize: 24.0,
-                  ),
-                ),
-                Text(
-                  name,
-                  style: const TextStyle(
-                    color: AppColors.colorShade01,
-                    fontSize: 12.0,
-                  ),
-                ),
+                Image.asset(image,
+                    width: Dimensions.iconSize,
+                    height: Dimensions.iconSize,
+                    fit: BoxFit.cover),
+                Text(name, style: TextStyles.comfortaa_light_12),
               ],
             ),
           ),
