@@ -3,6 +3,8 @@ import 'package:data/providers/remote/firebase_provider.dart';
 import 'package:data/repositories/dish_repository_impl.dart';
 import 'package:domain/domain.dart';
 
+final DataDI dataDI = DataDI();
+
 class DataDI {
   void initDependencies() {
     initFirebase();

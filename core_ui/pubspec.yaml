@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   domain:
     path: ../domain
+  navigation:
+    path: ../navigation
   cached_network_image: ^3.2.3
 
 dev_dependencies:

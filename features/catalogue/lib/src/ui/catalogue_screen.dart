@@ -5,6 +5,7 @@ import 'package:core/core.dart';
 
 import 'catalogue_form.dart';
 
+@RoutePage()
 class CatalogueScreen extends StatelessWidget {
   const CatalogueScreen({super.key});
 

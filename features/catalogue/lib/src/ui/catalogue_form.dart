@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:catalogue/src/bloc/catalogue_bloc.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:detailed_dish_view/detailed_dish_view.dart';
 
 class CatalogueForm extends StatefulWidget {
   const CatalogueForm({super.key});
@@ -53,8 +54,13 @@ class _CatalogueFormState extends State<CatalogueForm> {
                     crossAxisCount: 2,
                     children: List<Widget>.generate(
                       state.dishes.length,
-                      (index) => DishElement(
-                        dishModel: state.dishes[index],
+                      (index) => InkWell(
+                        onTap: () => context.pushRoute(DetailedDishViewRoute(
+                          dishModel: state.dishes[index],
+                        )),
+                        child: DishElement(
+                          dishModel: state.dishes[index],
+                        ),
                       ),
                     ),
                   ),
