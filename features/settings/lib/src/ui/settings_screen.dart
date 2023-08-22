@@ -1,29 +1,52 @@
-import 'package:flutter/material.dart';
+import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
-import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 
-@RoutePage()
+import '../../settings.dart';
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: AppColors.colorShade01,
-          ),
-          title: Center(
-            child: Text(
-              'Settings',
-              style: TextStyles.comfortaa_bold_24.copyWith(
-                color: AppColors.colorShade01,
-              ),
-            ),
-          ),
+    return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        title: Text(
+          'Settings',
+          style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
+      ),
+      body: BlocBuilder<SettingsBloc, SettingsState>(
+        builder: (context, state) {
+          return Container(
+            padding: const EdgeInsets.all(Dimensions.padding10),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Dark theme',
+                      style: Theme.of(context).textTheme.displayLarge,
+                    ),
+                    Switch(
+                      onChanged: (bool value) {
+                        BlocProvider.of<SettingsBloc>(context).add(
+                          OnSwitchThemeEvent(isDark: value),
+                        );
+                      },
+                      value: state.isDark,
+                      activeColor: AppColors.colorPrimaryGradient,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          );
+        },
       ),
     );
   }

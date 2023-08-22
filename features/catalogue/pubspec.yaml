@@ -20,6 +20,10 @@ dependencies:
    path: ../../navigation
   detailed_dish_view:
     path: ../detailed_dish_view
+  home:
+    path: ../home
+  main_page:
+    path: ../main_page
 
 dev_dependencies:
   flutter_test:

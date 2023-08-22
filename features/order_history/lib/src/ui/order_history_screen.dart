@@ -11,19 +11,14 @@ class OrderHistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColors.lightBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-          backgroundColor: AppColors.lightBackgroundColor,
-          leading: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: AppColors.colorShade01,
-          ),
-          title: Center(
-            child: Text(
-              'Complete orders',
-              style: TextStyles.comfortaa_bold_24
-                  .copyWith(color: AppColors.colorShade01),
-            ),
+          centerTitle: true,
+          iconTheme: Theme.of(context).iconTheme,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: Text(
+            'Complete orders',
+            style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
         ),
       ),

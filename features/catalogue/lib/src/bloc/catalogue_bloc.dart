@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:detailed_dish_view/detailed_dish_view.dart';
 import 'package:domain/domain.dart';
 
 import 'catalogue_state.dart';
@@ -20,7 +21,7 @@ class CatalogueBloc extends Bloc<CatalogueEvent, CatalogueState> {
           ),
         ) {
     on<InitEvent>(_onInitEvent);
-
+    on<OnNavigateToDetailedDish>(_onNavigateToDetailedDish);
     add(InitEvent());
   }
 
@@ -39,6 +40,17 @@ class CatalogueBloc extends Bloc<CatalogueEvent, CatalogueState> {
       state.copyWith(
         dishes: dishes,
         isLoading: false,
+      ),
+    );
+  }
+
+  void _onNavigateToDetailedDish(
+    OnNavigateToDetailedDish event,
+    Emitter<CatalogueState> emit,
+  ) {
+    event.context.router.push(
+      DetailedDishViewRoute(
+        dishModel: event.dishModel,
       ),
     );
   }

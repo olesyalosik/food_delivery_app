@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class AppColors {
@@ -16,4 +17,13 @@ class AppColors {
   static const Color colorGray = Color(0xFFC4C4C4);
   static const Color lightBackgroundColor = Color(0xFFEFEFFC);
   static const Color lightPrimaryGradient = Color(0xFFECC1B3);
+  static const Color darkBackgroundColor = Color(0xFF595858);
+  static const LinearGradient primaryGradient = LinearGradient(
+    colors: <Color>[
+      colorPrimaryGradient,
+      Color(0xFFD73A03),
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
 }

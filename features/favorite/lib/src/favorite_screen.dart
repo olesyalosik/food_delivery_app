@@ -11,17 +11,11 @@ class FavoriteScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: AppColors.colorShade01,
-          ),
-          title: Center(
-            child: Text(
-              'Favorite',
-              style: TextStyles.comfortaa_bold_24.copyWith(
-                color: AppColors.colorShade01,
-              ),
-            ),
+          centerTitle: true,
+          iconTheme: Theme.of(context).iconTheme,
+          title: Text(
+            'Favorite',
+            style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
         ),
       ),

@@ -22,7 +22,6 @@ class MainPageScreen extends StatelessWidget {
         OrderHistoryRoute(),
         ShoppingCartRoute(),
         SettingsRoute(),
-        CatalogueRoute(),
       ],
       bottomNavigationBuilder: (
         BuildContext context,
@@ -44,15 +43,13 @@ class MainPageScreen extends StatelessWidget {
             ),
             child: BottomNavigationBar(
               selectedIconTheme: IconThemeData(
-                color: AppColors.colorPrimaryGradient,
+                color: Theme.of(context).navigationBarTheme.indicatorColor,
+                size: Theme.of(context).iconTheme.size,
               ),
-              unselectedIconTheme: IconThemeData(color: AppColors.colorShade01),
-              backgroundColor: AppColors.colorWhite,
+              unselectedIconTheme: Theme.of(context).iconTheme,
               type: BottomNavigationBarType.fixed,
-              iconSize: Dimensions.iconSize,
               showSelectedLabels: false,
               showUnselectedLabels: false,
-              selectedItemColor: AppColors.lightPrimaryGradient,
               currentIndex: tabsRouter.activeIndex,
               onTap: tabsRouter.setActiveIndex,
               items: const <BottomNavigationBarItem>[
@@ -81,11 +78,6 @@ class MainPageScreen extends StatelessWidget {
                       Icons.settings,
                     ),
                     label: 'settings'),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.list,
-                    ),
-                    label: 'catalogue'),
               ],
             ),
           ),

@@ -55,12 +55,16 @@ class AppRouter extends _$AppRouter {
           page: SettingsRoute.page,
           path: 'settings',
         ),
-        AutoRoute(
-          page: CatalogueRoute.page,
-          path: 'catalogue',
-        ),
       ],
-    )
+    ),
+    AutoRoute(
+      page: DetailedDishViewRoute.page,
+      path: '/detaileddishview',
+    ),
+    AutoRoute(
+      page: CatalogueRoute.page,
+      path: '/catalogue',
+    ),
 
     /// routes go here
   ];

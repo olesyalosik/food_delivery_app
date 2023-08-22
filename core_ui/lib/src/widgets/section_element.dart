@@ -23,7 +23,7 @@ class SectionElement extends StatelessWidget {
             width: Dimensions.categoryWidth,
             height: Dimensions.categoryHeight,
             decoration: BoxDecoration(
-              color: AppColors.lightBackgroundColor,
+              color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(Dimensions.categoryRadius),
               border: Border.all(
                 color: AppColors.colorPrimaryGradient,
@@ -49,7 +49,11 @@ class SectionElement extends StatelessWidget {
                     width: Dimensions.iconSize,
                     height: Dimensions.iconSize,
                     fit: BoxFit.cover),
-                Text(name, style: TextStyles.comfortaa_light_12),
+                Text(
+                  name,
+                  style: TextStyles.comfortaa_light_12
+                      .copyWith(color: AppColors.colorShade01),
+                ),
               ],
             ),
           ),

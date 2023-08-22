@@ -10,18 +10,14 @@ class ShoppingCartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios_rounded,
-            color: AppColors.colorShade01,
-          ),
-          title: Center(
-            child: Text(
-              'Pending orders',
-              style: TextStyles.comfortaa_bold_24.copyWith(
-                color: AppColors.colorShade01,
-              ),
-            ),
+          centerTitle: true,
+          iconTheme: Theme.of(context).iconTheme,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: Text(
+            'Pending orders',
+            style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
         ),
       ),

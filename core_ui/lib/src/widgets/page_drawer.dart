@@ -7,13 +7,16 @@ class PageDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: AppColors.lightBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(Dimensions.padding10),
+            padding: EdgeInsets.symmetric(
+              vertical: Dimensions.padding10,
+            ),
             child: Center(
               child: Container(
+                alignment: Alignment.bottomLeft,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                 ),
@@ -26,18 +29,34 @@ class PageDrawer extends StatelessWidget {
             ),
           ),
           Padding(
+            padding: EdgeInsets.symmetric(vertical: Dimensions.padding5),
+            child: Center(
+              child: Text(
+                'my name',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: Dimensions.padding5),
+            child: Center(
+              child: Text(
+                'my email',
+                style: Theme.of(context).textTheme.displayMedium,
+              ),
+            ),
+          ),
+          Padding(
             padding: EdgeInsets.all(Dimensions.padding10),
             child: Center(
               child: ListTile(
                 title: Text(
                   'My profile',
-                  style: TextStyles.comfortaa_light_14.copyWith(
-                    color: AppColors.colorShade01,
-                  ),
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
                 leading: Icon(
                   Icons.person,
-                  color: AppColors.colorShade01,
+                  color: Theme.of(context).iconTheme.color,
                   size: Dimensions.iconSize,
                 ),
               ),
@@ -49,13 +68,59 @@ class PageDrawer extends StatelessWidget {
               child: ListTile(
                 title: Text(
                   'Settings',
-                  style: TextStyles.comfortaa_light_14.copyWith(
-                    color: AppColors.colorShade01,
-                  ),
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
                 leading: Icon(
                   Icons.settings,
-                  color: AppColors.colorShade01,
+                  color: Theme.of(context).iconTheme.color,
+                  size: Dimensions.iconSize,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(Dimensions.padding10),
+            child: Center(
+              child: ListTile(
+                title: Text(
+                  'Payment method',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                leading: Icon(
+                  Icons.payment,
+                  color: Theme.of(context).iconTheme.color,
+                  size: Dimensions.iconSize,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(Dimensions.padding10),
+            child: Center(
+              child: ListTile(
+                title: Text(
+                  'Privacy policy',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                leading: Icon(
+                  Icons.privacy_tip_outlined,
+                  color: Theme.of(context).iconTheme.color,
+                  size: Dimensions.iconSize,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(Dimensions.padding10),
+            child: Center(
+              child: ListTile(
+                title: Text(
+                  'Contact us',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                leading: Icon(
+                  Icons.message_rounded,
+                  color: Theme.of(context).iconTheme.color,
                   size: Dimensions.iconSize,
                 ),
               ),

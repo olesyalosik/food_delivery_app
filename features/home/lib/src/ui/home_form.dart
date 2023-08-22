@@ -5,6 +5,8 @@ import 'package:home/src/bloc/home_bloc.dart';
 import 'package:catalogue/catalogue.dart';
 import 'package:navigation/navigation.dart';
 
+import 'widgets/dish_element.dart';
+
 class HomeForm extends StatefulWidget {
   const HomeForm({super.key});
 
@@ -19,32 +21,11 @@ class _HomeFormState extends State<HomeForm> {
         builder: (BuildContext context, HomeState state) {
       return SafeArea(
         child: Scaffold(
-          backgroundColor: AppColors.lightBackgroundColor,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: AppBar(
+            iconTheme: Theme.of(context).iconTheme,
             centerTitle: true,
-            backgroundColor: AppColors.lightBackgroundColor,
-            title: Column(
-              children: [
-                Text(
-                  'Delivery to',
-                  style: TextStyles.comfortaa_light_16.copyWith(
-                    color: AppColors.colorShade01,
-                    decoration: TextDecoration.underline,
-                    decorationColor: AppColors.colorShade01,
-                    decorationThickness: 1.0,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5.0,
-                ),
-                Text(
-                  '*address*',
-                  style: TextStyles.comfortaa_light_14.copyWith(
-                    color: AppColors.colorPrimaryGradient,
-                  ),
-                ),
-              ],
-            ),
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             actions: <Widget>[
               Padding(
                 padding: EdgeInsetsDirectional.only(
@@ -53,7 +34,6 @@ class _HomeFormState extends State<HomeForm> {
                 ),
                 child: Icon(
                   Icons.person,
-                  size: Dimensions.iconSize,
                 ),
               ),
             ],
@@ -61,18 +41,20 @@ class _HomeFormState extends State<HomeForm> {
           drawer: PageDrawer(),
           body: state.isLoading
               ? const Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: AppColors.colorPrimaryColor,
+                  ),
                 )
               : Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Align(
+                      Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Enjoy Delicious food',
-                          style: TextStyles.comfortaa_light_24,
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                       ),
                       Container(
@@ -96,14 +78,13 @@ class _HomeFormState extends State<HomeForm> {
                         children: [
                           Text(
                             'Popular items',
-                            style: TextStyles.comfortaa_light_16
-                                .copyWith(color: AppColors.colorShade01),
+                            style: Theme.of(context).textTheme.displayLarge,
                           ),
                           InkWell(
                             onTap: () => context.pushRoute(CatalogueRoute()),
                             child: Text(
                               'View all (${state.dishes.length})',
-                              style: TextStyles.comfortaa_light_14.copyWith(
+                              style: TextStyles.comfortaa_light_16.copyWith(
                                   color: AppColors.colorPrimaryGradient,
                                   decoration: TextDecoration.underline,
                                   decorationThickness: 2.0,
