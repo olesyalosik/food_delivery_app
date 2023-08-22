@@ -21,7 +21,7 @@ class AppColors {
   static const LinearGradient primaryGradient = LinearGradient(
     colors: <Color>[
       colorPrimaryGradient,
-      Color(0xFFD73A03),
+      Color(0xFFE8531D),
     ],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,

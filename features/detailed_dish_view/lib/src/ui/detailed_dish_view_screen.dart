@@ -84,8 +84,8 @@ class DetailedDishViewScreen extends StatelessWidget {
                       size: Dimensions.iconSize,
                     ),
                     Text(
-                      'n',
-                      style: TextStyles.comfortaa_medium_24.copyWith(
+                      'num',
+                      style: TextStyles.comfortaa_bold_16.copyWith(
                         color: AppColors.colorWhite,
                       ),
                     ),
