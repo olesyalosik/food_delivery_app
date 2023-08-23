@@ -51,7 +51,7 @@ class SectionElement extends StatelessWidget {
                     fit: BoxFit.cover),
                 Text(
                   name,
-                  style: TextStyles.comfortaa_light_12
+                  style: TextStyles.comfortaa_medium_12
                       .copyWith(color: AppColors.colorShade01),
                 ),
               ],
