@@ -3,7 +3,6 @@ import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/domain.dart';
 import 'package:catalogue/catalogue.dart';
-import 'package:navigation/navigation.dart';
 
 @RoutePage()
 class DetailedDishViewScreen extends StatelessWidget {
@@ -33,8 +32,8 @@ class DetailedDishViewScreen extends StatelessWidget {
           actions: <Widget>[
             Padding(
               padding: EdgeInsetsDirectional.only(
-                start: 30.0,
-                end: 10.0,
+                start: Dimensions.padding30,
+                end: Dimensions.padding10,
               ),
               child: Icon(
                 Icons.person,
@@ -51,8 +50,8 @@ class DetailedDishViewScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
-                height: 225.0,
-                width: 260.0,
+                height: Dimensions.containerDishImageHeight,
+                width: Dimensions.containerDishImageWidth,
                 decoration: BoxDecoration(
                   color: AppColors.colorWhite,
                   borderRadius:
@@ -61,18 +60,18 @@ class DetailedDishViewScreen extends StatelessWidget {
                 child: FittedBox(
                   child: DishImage(
                     imageURL: dishModel.imageURL,
-                    width: 230.0,
-                    height: 150.0,
+                    width: Dimensions.dishImageWidth,
+                    height: Dimensions.dishImageHeight,
                     alignment: Alignment.center,
                   ),
                 ),
               ),
               Container(
-                height: 50,
-                width: 120,
+                height: Dimensions.detailedAddToCartButtonHeight,
+                width: Dimensions.detailedAddToCartButtonWidth,
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient,
-                  borderRadius: BorderRadius.circular(30.0),
+                  borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
                   color: AppColors.colorPrimaryGradient,
                 ),
                 child: Row(
@@ -111,7 +110,7 @@ class DetailedDishViewScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 20.0,
+                  horizontal: Dimensions.padding20,
                 ),
                 child: Container(
                   alignment: Alignment.centerLeft,
@@ -122,7 +121,7 @@ class DetailedDishViewScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 70.0,
+                height: Dimensions.ingredientSizedBoxHeight,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.all(Dimensions.padding5),
@@ -134,14 +133,15 @@ class DetailedDishViewScreen extends StatelessWidget {
                       ),
                       child: Container(
                         alignment: Alignment.center,
-                        width: 200.0,
-                        height: 50.0,
+                        width: Dimensions.ingredientWidth,
+                        height: Dimensions.ingredientHeight,
                         decoration: BoxDecoration(
                           color: AppColors.colorWhite,
-                          borderRadius: BorderRadius.circular(30.0),
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.pictureRadius),
                           border: Border.all(
                             color: AppColors.colorPrimaryGradient,
-                            width: 3.0,
+                            width: Dimensions.lineWidth,
                           ),
                         ),
                         child: Text(
@@ -158,13 +158,13 @@ class DetailedDishViewScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 350.0,
-                height: 50.0,
+                width: Dimensions.addToCartButtonWidth,
+                height: Dimensions.addToCartButtonHeight,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: AppColors.colorPrimaryGradient,
                   gradient: AppColors.primaryGradient,
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(Dimensions.buttonRadius),
                 ),
                 child: Text(
                   'Add to cart',

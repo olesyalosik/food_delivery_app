@@ -2,8 +2,6 @@ import 'package:core/core.dart';
 import 'package:catalogue/src/bloc/catalogue_bloc.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:detailed_dish_view/detailed_dish_view.dart';
-import 'package:home/home.dart';
 import 'package:main_page/main_page.dart';
 import 'widgets/dish_element.dart';
 
@@ -51,7 +49,7 @@ class _CatalogueFormState extends State<CatalogueForm> {
           body: state.isLoading
               ? const Center(
                   child: CircularProgressIndicator(
-                    color: AppColors.colorPrimaryColor,
+                    color: AppColors.colorAccent,
                   ),
                 )
               : Padding(

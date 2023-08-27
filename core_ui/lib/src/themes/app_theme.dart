@@ -59,25 +59,27 @@ class AppTheme {
         size: Dimensions.iconSize,
       ),
       textTheme: TextTheme(
-          displayLarge: TextStyles.comfortaa_light_16.copyWith(
-            color: AppColors.colorWhite,
-          ),
-          displayMedium: TextStyles.comfortaa_light_14.copyWith(
-            color: AppColors.colorWhite,
-          ),
-          displaySmall: TextStyles.comfortaa_light_12.copyWith(
-            color: AppColors.colorWhite,
-          ),
-          titleMedium: TextStyles.comfortaa_bold_16.copyWith(
-            color: AppColors.colorWhite,
-          ),
-          titleLarge: TextStyles.comfortaa_light_24.copyWith(
-            color: AppColors.colorWhite,
-          )),
+        displayLarge: TextStyles.comfortaa_light_16.copyWith(
+          color: AppColors.colorWhite,
+        ),
+        displayMedium: TextStyles.comfortaa_light_14.copyWith(
+          color: AppColors.colorWhite,
+        ),
+        displaySmall: TextStyles.comfortaa_light_12.copyWith(
+          color: AppColors.colorWhite,
+        ),
+        titleMedium: TextStyles.comfortaa_bold_16.copyWith(
+          color: AppColors.colorWhite,
+        ),
+        titleLarge: TextStyles.comfortaa_light_24.copyWith(
+          color: AppColors.colorWhite,
+        ),
+      ),
       cardColor: AppColors.colorShade01,
       navigationBarTheme: NavigationBarThemeData(
-          backgroundColor: AppColors.colorShade02,
-          indicatorColor: AppColors.colorPrimaryGradient),
+        backgroundColor: AppColors.colorShade02,
+        indicatorColor: AppColors.colorPrimaryGradient,
+      ),
     );
   }
 }

@@ -20,8 +20,8 @@ class PageDrawer extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                 ),
-                width: 100.0,
-                height: 100.0,
+                width: Dimensions.profilePictureWidth,
+                height: Dimensions.profilePictureHeight,
                 child: FittedBox(
                   child: Image.asset('assets/pictures/profile_picture.jpg'),
                 ),

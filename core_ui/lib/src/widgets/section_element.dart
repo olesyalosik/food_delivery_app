@@ -27,7 +27,7 @@ class SectionElement extends StatelessWidget {
               borderRadius: BorderRadius.circular(Dimensions.categoryRadius),
               border: Border.all(
                 color: AppColors.colorPrimaryGradient,
-                width: 2.0,
+                width: Dimensions.lineWidth,
               ),
             ),
           ),

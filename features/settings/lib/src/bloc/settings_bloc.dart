@@ -8,11 +8,11 @@ export 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   SettingsBloc() : super(SettingsState(isDark: false)) {
-    on<OnSwitchThemeEvent>(_onSetTheme);
+    on<SwitchThemeEvent>(_onSetTheme);
   }
 
   Future<void> _onSetTheme(
-    OnSwitchThemeEvent event,
+    SwitchThemeEvent event,
     Emitter<SettingsState> emit,
   ) async {
     emit(SettingsState(isDark: event.isDark));

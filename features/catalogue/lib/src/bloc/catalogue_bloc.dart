@@ -21,7 +21,7 @@ class CatalogueBloc extends Bloc<CatalogueEvent, CatalogueState> {
           ),
         ) {
     on<InitEvent>(_onInitEvent);
-    on<OnNavigateToDetailedDish>(_onNavigateToDetailedDish);
+    on<NavigateToDetailedDishEvent>(_onNavigateToDetailedDish);
     add(InitEvent());
   }
 
@@ -45,7 +45,7 @@ class CatalogueBloc extends Bloc<CatalogueEvent, CatalogueState> {
   }
 
   void _onNavigateToDetailedDish(
-    OnNavigateToDetailedDish event,
+    NavigateToDetailedDishEvent event,
     Emitter<CatalogueState> emit,
   ) {
     event.context.router.push(

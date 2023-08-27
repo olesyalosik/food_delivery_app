@@ -20,7 +20,7 @@ class DishElement extends StatelessWidget {
         vertical: Dimensions.padding10,
       ),
       child: Container(
-        height: Dimensions.dishELementHeight,
+        height: Dimensions.dishElementHeight,
         width: Dimensions.dishElementWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Dimensions.containerRadius),
@@ -28,7 +28,7 @@ class DishElement extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () => BlocProvider.of<CatalogueBloc>(context).add(
-            OnNavigateToDetailedDish(
+            NavigateToDetailedDishEvent(
               context: context,
               dishModel: dishModel,
             ),
@@ -52,7 +52,8 @@ class DishElement extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsetsDirectional.symmetric(
-                        horizontal: Dimensions.padding5),
+                      horizontal: Dimensions.padding5,
+                    ),
                     child: Icon(
                       Icons.favorite,
                       color: AppColors.colorPrimaryColor,

@@ -28,18 +28,24 @@ class MainPageScreen extends StatelessWidget {
         TabsRouter tabsRouter,
       ) {
         return Container(
-          height: 75.0,
+          height: Dimensions.navigationBarHeight,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-                topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+              topRight: Radius.circular(Dimensions.navigationBarRadius),
+              topLeft: Radius.circular(Dimensions.navigationBarRadius),
+            ),
             boxShadow: [
-              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+              BoxShadow(
+                color: Colors.black38,
+                spreadRadius: 0,
+                blurRadius: 10,
+              ),
             ],
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30.0),
-              topRight: Radius.circular(30.0),
+              topLeft: Radius.circular(Dimensions.navigationBarRadius),
+              topRight: Radius.circular(Dimensions.navigationBarRadius),
             ),
             child: BottomNavigationBar(
               selectedIconTheme: IconThemeData(
@@ -54,30 +60,35 @@ class MainPageScreen extends StatelessWidget {
               onTap: tabsRouter.setActiveIndex,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.home_rounded,
-                    ),
-                    label: 'Home'),
+                  icon: Icon(
+                    Icons.home_rounded,
+                  ),
+                  label: 'Home',
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.favorite_outline_rounded,
-                    ),
-                    label: 'Favorite'),
+                  icon: Icon(
+                    Icons.favorite_outline_rounded,
+                  ),
+                  label: 'Favorite',
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.history,
-                    ),
-                    label: 'Order History'),
+                  icon: Icon(
+                    Icons.history,
+                  ),
+                  label: 'Order History',
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.shopping_cart_outlined,
-                    ),
-                    label: 'shopping cart'),
+                  icon: Icon(
+                    Icons.shopping_cart_outlined,
+                  ),
+                  label: 'shopping cart',
+                ),
                 BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.settings,
-                    ),
-                    label: 'settings'),
+                  icon: Icon(
+                    Icons.settings,
+                  ),
+                  label: 'settings',
+                ),
               ],
             ),
           ),

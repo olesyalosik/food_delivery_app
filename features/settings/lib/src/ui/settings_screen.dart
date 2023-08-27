@@ -35,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
                     Switch(
                       onChanged: (bool value) {
                         BlocProvider.of<SettingsBloc>(context).add(
-                          OnSwitchThemeEvent(isDark: value),
+                          SwitchThemeEvent(isDark: value),
                         );
                       },
                       value: state.isDark,
