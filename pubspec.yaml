@@ -14,10 +14,18 @@ dependencies:
     path: ./features/catalogue
   home:
     path: ./features/home
+  detailed_dish_view:
+    path: ./features/detailed_dish_view
   core:
     path: ./core
   data:
     path: ./data
+  navigation:
+    path: ./navigation
+  core_ui:
+    path: ./core_ui
+  settings:
+    path: ./features/settings
 
   cupertino_icons: ^1.0.2
   firebase_core: ^2.15.0

@@ -1,6 +1,7 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:domain/domain.dart';
+import 'package:navigation/navigation.dart';
 
 class DishElement extends StatelessWidget {
   final DishModel dishModel;
@@ -18,6 +19,8 @@ class DishElement extends StatelessWidget {
         vertical: Dimensions.padding10,
       ),
       child: Container(
+        height: Dimensions.dishElementHeight,
+        width: Dimensions.dishElementWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Dimensions.containerRadius),
           color: AppColors.colorWhite,
@@ -38,7 +41,7 @@ class DishElement extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: <Widget>[
                 const Padding(
                   padding: EdgeInsetsDirectional.symmetric(
                       horizontal: Dimensions.padding5),

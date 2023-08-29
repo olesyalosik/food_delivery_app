@@ -10,6 +10,9 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   appDI.initDependencies();
-  DataDI().initDependencies();
-  runApp(const FoodDeliveryApp());
+  dataDI.initDependencies();
+  await appLocator.allReady();
+  runApp(
+    const FoodDeliveryApp(),
+  );
 }

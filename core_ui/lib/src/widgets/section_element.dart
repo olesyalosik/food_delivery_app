@@ -15,7 +15,7 @@ class SectionElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: Dimensions.padding5),
+      padding: const EdgeInsets.symmetric(horizontal: Dimensions.padding10),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
@@ -23,11 +23,11 @@ class SectionElement extends StatelessWidget {
             width: Dimensions.categoryWidth,
             height: Dimensions.categoryHeight,
             decoration: BoxDecoration(
-              color: AppColors.lightBackgroundColor,
+              color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(Dimensions.categoryRadius),
               border: Border.all(
                 color: AppColors.colorPrimaryGradient,
-                width: 2.0,
+                width: Dimensions.lineWidth,
               ),
             ),
           ),
@@ -49,7 +49,11 @@ class SectionElement extends StatelessWidget {
                     width: Dimensions.iconSize,
                     height: Dimensions.iconSize,
                     fit: BoxFit.cover),
-                Text(name, style: TextStyles.comfortaa_light_12),
+                Text(
+                  name,
+                  style: TextStyles.comfortaa_medium_12
+                      .copyWith(color: AppColors.colorShade01),
+                ),
               ],
             ),
           ),
